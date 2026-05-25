@@ -1,5 +1,17 @@
 onboarding = false
 
+[keys]
+prefix = "ctrl+space"
+split_vertical = "prefix+backslash"
+split_horizontal = "prefix+minus"
+previous_workspace = "prefix+["
+next_workspace = "prefix+]"
+focus_agent = "prefix+alt+1..9"
+focus_pane_left = "shift+alt+left"
+focus_pane_down = "shift+alt+down"
+focus_pane_up = "shift+alt+up"
+focus_pane_right = "shift+alt+right"
+
 [theme]
 name = "catppuccin"
 
