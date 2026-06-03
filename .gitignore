@@ -6,3 +6,5 @@ Thumbs.db
 *.log
 *.sock
 session.json
+.gstack/
+.omc/

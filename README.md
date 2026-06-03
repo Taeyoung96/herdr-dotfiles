@@ -1,62 +1,119 @@
 # herdr-dotfiles
 
-Personal [herdr](https://herdr.dev) configuration, version-controlled and synced across machines.
+![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![herdr](https://img.shields.io/github/v/release/ogulcancelik/herdr?label=herdr)
+
+Personal [herdr](https://herdr.dev) config — modifier-only pane navigation, catppuccin theme, all agents visible.
+
+![herdr screenshot](./assets/screenshot.png)
+
+> Screenshot from [ogulcancelik/herdr](https://github.com/ogulcancelik/herdr)
+
+---
+
+## What is herdr?
+
+[herdr](https://github.com/ogulcancelik/herdr) is a terminal multiplexer built for AI coding agents. Think tmux, but with live agent status (blocked / working / done) visible at a glance — run multiple Claude, Codex, or Cursor sessions side-by-side in workspaces, tabs, and panes. Single Rust binary, no Electron, no GUI app.
+
+---
+
+## What this config changes from herdr defaults
+
+> **Prefix = `ctrl+space`** (herdr default is `ctrl+b`, same as tmux)
+
+### 🔑 Prefix
+
+Default `ctrl+b` → **`ctrl+space`**
+
+### 🪟 Pane navigation
+
+No prefix needed. Hold modifiers and tap arrow keys from anywhere.
+
+| Key | Action |
+|-----|--------|
+| `Shift+Alt+←` | Focus pane left |
+| `Shift+Alt+↓` | Focus pane down |
+| `Shift+Alt+↑` | Focus pane up |
+| `Shift+Alt+→` | Focus pane right |
+
+### 📂 Workspace switching
+
+> Prefix = `ctrl+space`
+
+| Key | Action |
+|-----|--------|
+| `Prefix+{` | Previous workspace |
+| `Prefix+}` | Next workspace |
+
+### 🤖 Agent switching
+
+| Key | Action |
+|-----|--------|
+| `Prefix+,` | Previous agent |
+| `Prefix+.` | Next agent |
+| `Prefix` then `Alt+1..9` | Jump to agent by number |
+
+### ✂️ Splits
+
+| Key | Action |
+|-----|--------|
+| `Prefix+\` | Split vertical |
+| `Prefix+-` | Split horizontal |
+
+### 🎨 UI
+
+| Setting | This config | Note |
+|---------|-------------|------|
+| Theme | catppuccin | |
+| Sound | disabled | |
+| Toast delivery | herdr | notifications appear inside herdr, not OS-level |
+| Agent labels on pane borders | on | |
+| Agent panel scope | all | show agents from all workspaces, not just active one |
+| Onboarding | disabled | see [herdr docs](https://herdr.dev/docs) for guided intro |
+
+---
 
 ## Setup
 
+### 1. Install herdr
+
 ```bash
-git clone git@github.com:<user>/herdr-dotfiles.git
+curl -fsSL https://herdr.dev/install.sh | sh
+```
+
+Or with Homebrew:
+
+```bash
+brew install herdr
+```
+
+### 2. Clone and link this config
+
+```bash
+git clone https://github.com/Taeyoung96/herdr-dotfiles.git
 cd herdr-dotfiles
 chmod +x install.sh
 ./install.sh
 ```
 
-## Sync
+Symlinks keep the live config up to date — no re-run needed after `git pull`.
+
+### 3. Start herdr
 
 ```bash
-git pull
+herdr
 ```
 
-Symlinks keep the live config file up to date automatically — no re-run needed.
-
-## Apply changes without restarting
+### 4. Apply config changes to a running session
 
 ```bash
 herdr server reload-config
 ```
 
-## What this config changes from defaults
-
-### Prefix
-
-| Setting | Default | This config |
-|---------|---------|-------------|
-| Prefix key | `ctrl+b` | `ctrl+space` |
-
-### Keybindings
-
-| Action | Default | This config |
-|--------|---------|-------------|
-| Split vertical | `prefix+v` | `prefix+\` |
-| Split horizontal | `prefix+minus` | `prefix+minus` (same) |
-| Focus pane left | `prefix+h` | `shift+alt+left` |
-| Focus pane down | `prefix+j` | `shift+alt+down` |
-| Focus pane up | `prefix+k` | `shift+alt+up` |
-| Focus pane right | `prefix+l` | `shift+alt+right` |
-| Previous workspace | unset | `prefix+[` |
-| Next workspace | unset | `prefix+]` |
-| Focus agent (by number) | unset | `prefix+alt+1..9` |
-
-### UI
-
-| Setting | Default | This config |
-|---------|---------|-------------|
-| Theme | default | catppuccin |
-| Sound | enabled | disabled |
-| Agent labels on pane borders | off | on |
-| Agent panel scope | current | all |
+---
 
 ## Requirements
 
 - Linux or macOS
-- herdr installed
+- herdr — [install docs](https://herdr.dev/install)
