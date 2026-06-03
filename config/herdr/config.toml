@@ -11,6 +11,10 @@ focus_pane_left = "shift+alt+left"
 focus_pane_down = "shift+alt+down"
 focus_pane_up = "shift+alt+up"
 focus_pane_right = "shift+alt+right"
+navigate_pane_left = "shift+alt+left"
+navigate_pane_down = "shift+alt+down"
+navigate_pane_up = "shift+alt+up"
+navigate_pane_right = "shift+alt+right"
 
 [theme]
 name = "catppuccin"
